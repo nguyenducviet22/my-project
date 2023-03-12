@@ -1,0 +1,37 @@
+package model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Category {
+	@Id
+	private String genreCode;
+	private String nameOfGenre;
+	
+	public Category() {
+	}
+
+	public Category(String genreCode, String nameOfGenre) {
+		this.genreCode = genreCode;
+		this.nameOfGenre = nameOfGenre;
+	}
+
+	public String getGenreCode() {
+		return genreCode;
+	}
+
+	public void setGenreCode(String genreCode) {
+		this.genreCode = genreCode;
+	}
+
+	public String getNameOfGenre() {
+		return nameOfGenre;
+	}
+
+	public void setNameOfGenre(String nameOfGenre) {
+		this.nameOfGenre = nameOfGenre;
+	}
+	
+	
+}

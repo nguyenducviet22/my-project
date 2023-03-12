@@ -1,0 +1,17 @@
+package test;
+
+import java.util.Random;
+
+public class Test2 {
+	public static void main(String[] args) {
+		Random rd = new Random();
+		int value = rd.nextInt(1, 1000);
+		System.out.println(value);
+		String randomCode1 = System.currentTimeMillis() + value + "";
+		String randomCode2 = System.currentTimeMillis() + value + "";
+		String randomCode3 = System.currentTimeMillis() + value + "";
+		System.out.println(value);
+		System.out.println(value);
+		System.out.println(value);
+	}
+}

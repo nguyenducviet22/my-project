@@ -1,0 +1,39 @@
+package model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class Category {
+	@Id
+	private String categoryCode;
+	private String categoryName;
+	@OneToMany
+	private List<Product> 
+
+	public Category() {
+	}
+
+	public Category(String categoryCode, String categoryName) {
+		this.categoryCode = categoryCode;
+		this.categoryName = categoryName;
+	}
+
+	public String getCategoryCode() {
+		return categoryCode;
+	}
+
+	public void setCategoryCode(String categoryCode) {
+		this.categoryCode = categoryCode;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+}

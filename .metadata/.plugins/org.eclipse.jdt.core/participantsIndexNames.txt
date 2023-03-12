@@ -1,0 +1,31 @@
+INDEX VERSION 1.131
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1783871827.index
+\EL-JSTL\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\81569969.index
+\Eg\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4230195690.index
+\Eg2\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2566370886.index
+\MyWeb\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1999139733.index
+\MyWeb3\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1591368824.index
+\Test\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1610618709.index
+\MyWeb2\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1488989704.index
+\MyWeb3\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3494766006.index
+\JSF\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2186056735.index
+\MyWebsite\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\46233773.index
+\MyWeb\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3748062539.index
+\MyWeb2\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\671479188.index
+\Test\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2365374159.index
+\MyWeb1\src\main\java
+C:\Users\NGUYEN DUC VIET\eclipse-workspace6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3574337442.index
+\JSF\src\main\java
