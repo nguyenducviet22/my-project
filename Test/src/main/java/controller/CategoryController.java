@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -36,21 +38,38 @@ public class CategoryController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String cateId = request.getParameter("cateId");
+		String cateId = request.getParameter("cid");
 		ProductDao productDao = new ProductDao();
-		CategoryDao cateDao = new CategoryDao();
+//		CategoryDao cateDao = new CategoryDao();
 		
 		List<Product> list = productDao.selectProductByCId(cateId);
-		request.setAttribute("listP", list);
+//		request.setAttribute("listP", list);
+//		
+//		List<Category> listC = cateDao.selectAll();
+//		request.setAttribute("listC", listC);
+//		
+//		Product latest = productDao.selectLatestProduct();
+//		request.setAttribute("latest", latest);
+//		
+//		request.getRequestDispatcher("/home.jsp").forward(request, response);
 		
-		List<Category> listC = cateDao.selectAll();
-		request.setAttribute("listC", listC);
-		
-		Product latest = productDao.selectLatestProduct();
-		request.setAttribute("latest", latest);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
-		rd.forward(request, response);
+		PrintWriter out = response.getWriter();
+		for (Product o : list) {
+			out.println("<div class=\"col-lg-4 col-md-6 md-4\">\r\n"
+					+ "							<div class=\"card h-100\" style=\"width: 18rem;\">\r\n"
+					+ "								<img src=\""+o.getImage()+"\" class=\"card-img-top\" alt=\""+o.getName()+"\">\r\n"
+					+ "								<div class=\"card-body\">\r\n"
+					+ "									<h5 class=\"card-title\">\r\n"
+					+ "										<a href=\"detail?pid="+o.getId()+"\">"+o.getName()+"</a>\r\n"
+					+ "									</h5>\r\n"
+					+ "									<p class=\"card-text\">"+o.getPrice()+"</p>\r\n"
+					+ "									<p class=\"card-text\">"+o.getTitle()+"</p>\r\n"
+					+ "									<p class=\"card-text\">"+o.getDescription()+"</p>\r\n"
+					+ "									<a href=\"#\" class=\"btn btn-primary\">Buy now</a>\r\n"
+					+ "								</div>\r\n"
+					+ "							</div>\r\n"
+					+ "						</div>");
+		}
 	}
 
 	/**

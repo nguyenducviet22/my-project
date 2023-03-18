@@ -85,9 +85,8 @@
 					</button>
 				</div>
 				<!-- End Slider -->
-
 				<!-- Product -->
-				<div class="row">
+				<div id="content" class="row">
 					<c:forEach items="${listP }" var="p">
 						<div class="col-lg-4 col-md-6 md-4">
 							<div class="card h-100" style="width: 18rem;">
@@ -114,5 +113,20 @@
 	<!-- Footer -->
 	<%@include file="footer.jsp"%>
 	<!-- End Footer -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		function load(cateId) {
+			$.ajax({
+				url: "/Test/category",
+				type: "get",
+				data: {
+					cid: cateId
+					},
+					success: function (responseData){
+						document.getElementById("content").innerHTML = responseData;
+						}
+				});
+		}
+	</script>
 </body>
 </html>
