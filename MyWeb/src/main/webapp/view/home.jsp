@@ -87,7 +87,7 @@
 				<!-- End Slider -->
 				<!-- Product -->
 				<div class="row">
-					<c:forEach items="${proList}" var="p">
+					<c:forEach items="${listP}" var="p">
 						<div class="col-lg-4 col-md-6 md-4">
 							<div class="card h-100" style="width: 18rem;">
 								<img src="image/product/1.png" class="card-img-top"

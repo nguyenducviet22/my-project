@@ -1,0 +1,20 @@
+package daoJDBC;
+
+import java.util.List;
+
+import model.Account;
+
+public interface InterfaceDao<T> {
+	
+	public List<T> selectAll();
+
+	public T selectById(String t);
+
+	public T insert(T t);
+
+	public T update(T t);
+
+	public T delete(T t);
+
+	Account selectById(Account t);
+}

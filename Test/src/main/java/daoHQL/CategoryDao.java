@@ -10,7 +10,6 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 import model.Category;
-import model.Product;
 import util.HibernateUtil;
 
 public class CategoryDao implements InterfaceDao<Category> {

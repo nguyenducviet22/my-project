@@ -1,0 +1,67 @@
+package daoHQL;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Query;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import model.Brand;
+import model.Category;
+import util.HibernateUtil;
+
+public class BrandDao implements InterfaceDao<Brand> {
+
+	@Override
+	public List<Brand> selectAll() {
+		List<Brand> list = new ArrayList<Brand>();
+		try {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			if (sessionFactory != null) {
+				Session session = sessionFactory.openSession();
+				Transaction trans = session.beginTransaction();
+				// execute HQL
+				String hql = "from Brand";
+				Query query = session.createQuery(hql);
+				list = query.getResultList();
+				trans.commit();
+				session.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public Brand selectById(Brand t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insert(Brand t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Brand t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(Brand t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public static void main(String[] args) {
+		BrandDao brandDao = new BrandDao();
+		brandDao
+	}
+}

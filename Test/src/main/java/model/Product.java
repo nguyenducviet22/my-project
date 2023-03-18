@@ -14,24 +14,56 @@ public class Product {
 	private String name;
 	private String image;
 	private Double price;
+	private int amount;
 	private String title;
 	private String description;
 	@ManyToOne
 	@JoinColumn(name = "cateId")
 	private Category category;
+	@ManyToOne
+	@JoinColumn(name = "accId")
+	private Account account;
 
 	public Product() {
 	}
 
-	public Product(int id, String name, String image, Double price, String title, String description,
-			Category category) {
+	public Product(int id, String name, String image, Double price, int amount, String title, String description) {
 		this.id = id;
 		this.name = name;
 		this.image = image;
 		this.price = price;
+		this.amount = amount;
 		this.title = title;
 		this.description = description;
+	}
+
+	public Product(int id, String name, String image, Double price, int amount, String title, String description,
+			Account account, Category category) {
+		this.id = id;
+		this.name = name;
+		this.image = image;
+		this.price = price;
+		this.amount = amount;
+		this.title = title;
+		this.description = description;
+		this.account = account;
 		this.category = category;
+	}
+
+	public int getAmount() {
+		return amount;
+	}
+
+	public void setAmount(int amount) {
+		this.amount = amount;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 
 	public Category getCategory() {
@@ -92,8 +124,9 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", title=" + title
-				+ ", description=" + description + "]";
+		return "Product [id=" + id + ", name=" + name + ", image=" + image + ", price=" + price + ", amount=" + amount
+				+ ", title=" + title + ", description=" + description + ", category=" + category + ", account="
+				+ account + "]";
 	}
 
 }

@@ -1,0 +1,85 @@
+package daoJDBC;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Brand;
+import model.Product;
+import util.JDBCUtil;
+
+public class BrandDao implements InterfaceDao<Brand> {
+	// #1 create connection with CSDL
+		Connection con = null;
+		// #2 create SQL command and PreparedStatement
+		PreparedStatement pst = null;
+		// #3 conduct SQL command
+		ResultSet rs = null;
+		
+	@Override
+	public List<Brand> selectAll() {
+		List<Brand> list = new ArrayList<Brand>();
+		String sql = "select * from brand";
+		try {
+			con = JDBCUtil.getConnection();
+			pst = con.prepareStatement(sql);
+			System.out.println(sql);
+			rs = pst.executeQuery();
+
+			while (rs.next()) {
+				list.add(new Brand(rs.getInt(1), rs.getString(2)));
+			}
+			// #5 stop connection with CSDL
+			JDBCUtil.closeConnection(con);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	@Override
+	public Brand selectById(Brand t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Brand insert(Brand t) {
+		String sql = "insert into brand (bid, bname)" + "value (?, ?)";
+		try {
+			con = JDBCUtil.getConnection();
+			pst = con.prepareStatement(sql);
+			System.out.println(sql);
+			pst.setInt(1, t.getBid());
+			pst.setString(2, t.getBname());
+			pst.executeUpdate();
+			JDBCUtil.closeConnection(con);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Brand update(Brand t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Brand delete(Brand t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		BrandDao bDao = new BrandDao();
+		Brand brand = new Brand(7, "Uni");
+		bDao.insert(brand);
+	}
+
+}

@@ -1,0 +1,39 @@
+package daoHQL;
+
+import java.util.List;
+
+import model.Brand;
+
+public class BrandDao implements InterfaceDao<Brand> {
+
+	@Override
+	public List<Brand> selectAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Brand selectById(Brand t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean insert(Brand t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean update(Brand t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delete(Brand t) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

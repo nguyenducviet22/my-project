@@ -1,0 +1,66 @@
+package controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import daoJDBC.AccountDao;
+
+/**
+ * Servlet implementation class SignUpController
+ */
+@WebServlet("/register")
+public class RegisterController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public RegisterController() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String username = request.getParameter("user");
+		String password = request.getParameter("pass");
+		String rePassword = request.getParameter("repass");
+		String fullName = request.getParameter("fullName");
+		String gender = request.getParameter("gender");
+		String dateOfBirth = request.getParameter("dateOfBirth");
+		String address = request.getParameter("address");
+		String receivedAddress = request.getParameter("receivedAddress");
+		String phoneNumber = request.getParameter("phoneNumber");
+		String email = request.getParameter("email");
+
+		AccountDao accDao = new AccountDao();
+		if (accDao.checkUsername(username)) {
+			request.getAttribute("error", "The username was in existence.<br/>")
+			request.getRequestDispatcher("register.jsp").forward(request, response);
+		}
+		if (!password.equals(rePassword)) {
+			request.getRequestDispatcher("register.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("home").forward(request, response);
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

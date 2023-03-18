@@ -1,0 +1,74 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import daoJDBC.AccountDao;
+import model.Account;
+import util.Encoding;
+
+/**
+ * Servlet implementation class LogInControl
+ */
+@WebServlet("/sign-in")
+public class SignInController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SignInController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String username = request.getParameter("user");
+		String password = request.getParameter("pass");
+
+		request.setAttribute("username", username);
+		request.setAttribute("password", password);
+
+		Account account = new Account(username, password);
+
+		AccountDao accDao = new AccountDao();
+		account = accDao.signIn(account);
+		String url = "";
+		if (account == null) {
+			request.setAttribute("error", "The username or password you entered is incorrect!");
+			url = "/signIn.jsp";
+		} else {
+			HttpSession session = request.getSession();
+			session.setAttribute("account", account);
+			url = "/home.jsp";
+		}
+		RequestDispatcher rd = getServletContext().getRequestDispatcher(url);
+		rd.forward(request, response);
+		
+		if (account == null) {
+			request.setAttribute("error", "The username or password you entered is incorrect!");
+			request.getRequestDispatcher("/views/logIn.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("home").forward(request, response);
+		}
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

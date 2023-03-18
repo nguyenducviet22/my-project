@@ -1,0 +1,7 @@
+package daoHQL;
+
+import model.Brand;
+
+public class BrandDao implements InterfaceDao<Brand> {
+
+}

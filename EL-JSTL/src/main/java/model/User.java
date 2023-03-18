@@ -2,20 +2,26 @@ package model;
 
 public class User {
 
-	private String fullname;
+	private String fullName;
 
 	public User() {
 	}
 
-	public User(String fullname) {
-		this.fullname = fullname;
+	public User(String fullName) {
+		this.fullName = fullName;
 	}
 
-	public String getFullname() {
-		return fullname;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
+
+	@Override
+	public String toString() {
+		return "User [fullName=" + fullName + "]";
+	}
+
 }

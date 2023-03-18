@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="TheOrder"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="false"/>
 		<item key="casesensitive" value="true"/>
-		<item key="wholeword" value="false"/>
+		<item key="wholeword" value="true"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="name=&quot;act&quot;"/>
+			<item value="customer"/>
+			<item value="cusDao"/>
+			<item value="Customer_Inter_DAO"/>
+			<item value="Customer"/>
 			<item value="Order"/>
 			<item value="author"/>
 			<item value="Author"/>
 		</list>
 		<list key="replacehistory">
+			<item value="account"/>
+			<item value="accDao"/>
+			<item value="AccountDao"/>
+			<item value="Account"/>
 			<item value="TheOrder"/>
 			<item value="shop"/>
 			<item value="Shop"/>

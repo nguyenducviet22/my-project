@@ -31,7 +31,7 @@ public class HomeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		User user = new User();
-		user.setFullname("AAA");
+		user.setFullName("AAA");
 		request.setAttribute("name", user);
 		request.getRequestDispatcher("home.jsp").forward(request, response);
 	}
