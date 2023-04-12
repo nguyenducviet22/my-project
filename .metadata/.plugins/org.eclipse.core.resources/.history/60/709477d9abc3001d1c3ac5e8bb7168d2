@@ -1,7 +1,0 @@
-package controller;
-
-public class SignOut {
-
-	<input type="hidden" name="act" value="sign-in">
-
-}

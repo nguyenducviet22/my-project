@@ -80,10 +80,12 @@
 			<item value="MyWeb"/>
 		</list>
 		<list key="artifactId">
+			<item value="CRUD"/>
 			<item value="Test"/>
 			<item value="MyWeb"/>
 		</list>
 		<list key="version">
+			<item value="1.0"/>
 			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>

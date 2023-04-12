@@ -1,5 +1,0 @@
-package daoJDBC;
-
-public class CategoryDao {
-
-}

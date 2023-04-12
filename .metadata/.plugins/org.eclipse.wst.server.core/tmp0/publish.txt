@@ -1,2 +1,5 @@
 #Tomcat publish data
-#Sat Mar 18 10:18:19 ICT 2023
+#Tue Mar 21 10:54:31 ICT 2023
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\NGUYEN\ DUC\ VIET\\.m2\\repository\\org\\apache\\tomcat\\tomcat-jasper-el\\8.5.78\\tomcat-jasper-el-8.5.78.jar=WEB-INF/lib/tomcat-jasper-el-8.5.78.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\NGUYEN\ DUC\ VIET\\.m2\\repository\\org\\apache\\tomcat\\tomcat-jasper\\8.5.78\\tomcat-jasper-8.5.78.jar=WEB-INF/lib/tomcat-jasper-8.5.78.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\NGUYEN\ DUC\ VIET\\.m2\\repository\\org\\apache\\tomcat\\tomcat-websocket\\8.5.78\\tomcat-websocket-8.5.78.jar=WEB-INF/lib/tomcat-websocket-8.5.78.jar
